@@ -1,0 +1,14 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+    <h1>Detaylar Sayfasi</h1>
+    <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <p>{{ daily.author }}</p>
+              <small class="text-muted">{{ daily.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h4>{{ daily.title }}</h4>
+            <p class="article-content">{{ daily.content }}</p>
+          </div>
+        </article>
+{% endblock content %}

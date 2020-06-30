@@ -1,0 +1,24 @@
+{% extends "myapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Oturum aç</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Giriş</button>
+                <small class="text-muted ml-2">
+                    <a href="{% url 'password_reset' %}">Şifreyi Unuttum?</a>      <!--urls:password_reset -->
+                </small>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Kaydın Yok mu? <a class="ml-2" href="{% url 'register' %}">Şimdi Kayıt Ol</a>   <!--urls:register -->
+            </small>
+        </div>
+    </div>
+{% endblock content %}
